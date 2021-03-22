@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Twilio\Rest\Client;
 use Twilio\Exceptions\RestException;
+use App\Models\UsersPhoneNumber;
 
 
 
@@ -56,5 +57,7 @@ class VoiceController extends Controller
       } catch (RestException $rest) {
         echo 'Error: ' . $rest->getMessage();
       }
+      
     }
+    
   }

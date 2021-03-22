@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha256-t9UJPrESBeG2ojKTIcFLPGF7nHi2vEc7f5A2KpH/UBU=" crossorigin="anonymous"></script>
 
 <canvas id="myChart"></canvas>
@@ -6,11 +10,17 @@
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'line',
-        data: {
-            labels: ['SMS', '',''],
+        data: { 
+            labels: ['Start', 'Users','End'],
             datasets: [{
-                label: '# of SMS Send',
-                data: [0, {{$smsCount}}],
+                label: 'Registered Users',
+                data: [0, {{$smsCount}},{
+    x: 10,
+    y: 20
+}, {
+    x: 15,
+    y: 10
+} ],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -42,3 +52,5 @@
     });
     </script>
     </hr>
+
+    @endsection

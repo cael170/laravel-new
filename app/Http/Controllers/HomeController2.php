@@ -40,8 +40,8 @@ class HomeController2 extends Controller
     {
         //run validation on data sent in
         $validatedData = $request->validate([
-            'phone_number' => 'required|unique:users_phone_number|numeric',
-            'phone_email' => 'required|unique:users_phone_email',
+            'phone_number' => 'required|unique:users_phone_number|numeric'
+
 
             
         ]);
